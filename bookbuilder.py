@@ -3,8 +3,24 @@ import os, os.path
 import shutil
 
 def processpart(part, path, count):
-	start_chap = int(part.find("chapters").attrib['start'])
-	end_chap = int(part.find("chapters").attrib['end'])
+	print "\t\tPart: " + str(count)
+	start_chap = part.find("chapters").attrib['start']
+	end_chap = part.find("chapters").attrib['end']
+	length_zeros = len(start_chap)
+	chraw_data = ""
+	chap_path = path + "/chapters/"
+	
+	for chap in range(int(start_chap), int(end_chap)+1):
+		formater = '%0'+str(length_zeros)+'d'
+		print chap_path + "chap" + formater % chap + ".tex"
+		f = open(chap_path + "chap" + formater % chap + ".tex")
+		data = f.read()
+		f.close()
+		chraw_data += data
+	
+	f = open(path + "/tmp/" + "part" + str(count) + ".tex", "w")
+	f.write(chraw_data)
+	f.close()
 
 def processbook(book):
 	book_name = book.attrib['name']
