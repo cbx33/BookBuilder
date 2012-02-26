@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<series name="Alchemy Reigns">
+<parameters>
+	<formats>
+		<pdf />
+		<mobi />
+		<html />
+		<epub />
+	</formats>
+</parameters>
+	<book name="Breaking Silence" id="book1">
+		<part name="Tears and Love">
+			<chapters start="01" end="29" />
+		</part>
+		<part name="Tears and Love">
+			<chapters start="30" end="59" />
+		</part>
+		<part name="Tears and Love">
+			<chapters start="60" end="90" />
+		</part>
+		<part name="Tears and Love">
+			<chapters start="91" end="92" />
+		</part>
+	</book>
+	<book name="The Gathering" id="book2">
+	</book>
+</series>
